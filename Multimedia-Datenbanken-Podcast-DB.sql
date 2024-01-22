@@ -1,3 +1,46 @@
+-----------------------------------------------------------------------
+--Sequenzen fuer die Primaerschluessel
+
+    create sequence Abonnement_id_seq
+    start with 1
+    increment by 1
+    nomaxvalue;
+
+    create sequence Nutzer_id_seq
+    start with 1
+    increment by 1
+    nomaxvalue;
+
+    create sequence Podcast_id_seq
+    start with 1
+    increment by 1
+    nomaxvalue;
+
+    create sequence Kuenstler_id_seq
+    start with 1
+    increment by 1
+    nomaxvalue;
+
+    create sequence Folge_id_seq
+    start with 1
+    increment by 1
+    nomaxvalue;
+
+    create sequence Timestamp_id_seq
+    start with 1
+    increment by 1
+    nomaxvalue;
+
+    create sequence Werbung_id_seq
+    start with 1
+    increment by 1
+    nomaxvalue;
+
+    create sequence Werbetreibender_id_seq
+    start with 1
+    increment by 1
+    nomaxvalue;
+
 --Deklaration der Tabellen
     --Abonnement-Typ
     CREATE TABLE AbonnementTyp (
@@ -67,7 +110,7 @@
         Firmenname VARCHAR2(100) NOT NULL,
         Anschrift VARCHAR2(250),
     );
-    
+
     --Werbung
     CREATE TABLE Werbung (
         Wer_ID NUMBER DEFAULT Werbung_id_seq.nextval PRIMARY KEY,
@@ -130,49 +173,6 @@
         CONSTRAINT fk_Laeuft_in_Werbung FOREIGN KEY (Wer_ID) REFERENCES Werbung(Wer_ID),
         PRIMARY KEY (Fol_ID, Wer_ID)
     );
-
------------------------------------------------------------------------
---Sequenzen fuer die Primaerschluessel
-
-    create sequence Abonnement_id_seq
-    start with 1
-    increment by 1
-    nomaxvalue;
-
-    create sequence Nutzer_id_seq
-    start with 1
-    increment by 1
-    nomaxvalue;
-
-    create sequence Podcast_id_seq
-    start with 1
-    increment by 1
-    nomaxvalue;
-
-    create sequence Kuenstler_id_seq
-    start with 1
-    increment by 1
-    nomaxvalue;
-
-    create sequence Folge_id_seq
-    start with 1
-    increment by 1
-    nomaxvalue;
-
-    create sequence Timestamp_id_seq
-    start with 1
-    increment by 1
-    nomaxvalue;
-
-    create sequence Werbung_id_seq
-    start with 1
-    increment by 1
-    nomaxvalue;
-
-    create sequence Werbetreibender_id_seq
-    start with 1
-    increment by 1
-    nomaxvalue;
     
 -----------------------------------------------------------------------
 --Datensaetze einfuegen
