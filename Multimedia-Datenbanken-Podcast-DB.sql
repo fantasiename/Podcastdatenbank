@@ -59,6 +59,15 @@
         CONSTRAINT fk_Timestamp_Folge FOREIGN KEY (Fol_ID) REFERENCES Folge(Fol_ID)
     );
     
+    --Werbetreibender
+    CREATE TABLE Werbetreibender (
+        Wrt_ID NUMBER DEFAULT Werbetreibender_id_seq.nextval PRIMARY KEY,
+        EMail VARCHAR2(100) NOT NULL,
+        Telefonnummer VARCHAR2(20),
+        Firmenname VARCHAR2(100) NOT NULL,
+        Anschrift VARCHAR2(250),
+    );
+    
     --Werbung
     CREATE TABLE Werbung (
         Wer_ID NUMBER DEFAULT Werbung_id_seq.nextval PRIMARY KEY,
@@ -68,14 +77,6 @@
         CONSTRAINT fk_Werbung_Wrt FOREIGN KEY (Wrt_ID) REFERENCES Werbetreibender(Wrt_ID)
     );
     
-    --Werbetreibender
-    CREATE TABLE Werbetreibender (
-        Wrt_ID NUMBER DEFAULT Werbetreibender_id_seq.nextval PRIMARY KEY,
-        EMail VARCHAR2(100) NOT NULL,
-        Telefonnummer VARCHAR2(20),
-        Firmenname VARCHAR2(100) NOT NULL,
-        Anschrift VARCHAR2(250),
-    );
 
 --Deklaration Beziehungen mit Attributen
     --schreibt/Bewertung
