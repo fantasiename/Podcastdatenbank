@@ -544,6 +544,7 @@ drop Index mmdb_podcast_index;
     --Index fuer Podcast
     CREATE INDEX mmdb_podcast_index ON mmdb_Podcast ( Name, Beschreibung )
     INDEXTYPE IS CTXSYS.CONTEXT
+    --ToDo: Name mmdb_lexer ersetzen durch den Namen des vorhandenen
     PARAMETERS ( 'LEXER mmdb_lexer STORAGE mmdb_store SYNC (ON COMMIT)' );
 
 
